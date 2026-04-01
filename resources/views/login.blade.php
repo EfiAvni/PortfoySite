@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giris Yap - Muhammet Avni Kucuk</title>
+    <title>Giriş Yap - Muhammet Avni Küçük</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,17 +23,19 @@
         };
     </script>
 </head>
-<body class="min-h-screen overflow-hidden bg-slate-950 font-sans text-black antialiased">
-    <div class="relative flex min-h-screen items-center justify-center px-4 py-10 sm:px-6 lg:px-8">
-        <div class="absolute inset-0 bg-[linear-gradient(135deg,_#020617,_#0f172a_45%,_#111827)]"></div>
-        <div class="absolute left-12 top-12 h-32 w-32 rounded-full bg-cyan-400/10 blur-3xl"></div>
-        <div class="absolute bottom-12 right-12 h-40 w-40 rounded-full bg-blue-500/10 blur-3xl"></div>
+<body class="min-h-screen overflow-hidden bg-[#eef2ff] font-sans text-black antialiased">
+    <div class="relative isolate flex min-h-screen items-center justify-center px-4 py-10 sm:px-6 lg:px-8">
+        <div class="absolute inset-0 -z-10 bg-[#eef2ff]"></div>
+        <div class="absolute inset-x-0 top-0 -z-10 h-[420px] bg-gradient-to-br from-white/70 via-[#f4f7ff] to-[#eef2ff]"></div>
+        <div class="absolute left-12 top-12 -z-10 h-40 w-40 rounded-full bg-white/70 blur-3xl"></div>
+        <div class="absolute bottom-12 right-12 -z-10 h-52 w-52 rounded-full bg-indigo-100/70 blur-3xl"></div>
+        <div class="absolute left-1/2 top-1/3 -z-10 h-56 w-56 -translate-x-1/2 rounded-full bg-sky-100/60 blur-3xl"></div>
 
-        <div class="relative w-full max-w-md rounded-[2rem] bg-white p-6 shadow-panel sm:p-8 md:p-10">
+        <div class="relative w-full max-w-md rounded-[2rem] border border-white/60 bg-white/70 p-6 shadow-panel backdrop-blur-2xl sm:p-8 md:p-10">
             <div class="mx-auto w-full max-w-md">
                 <div class="mt-4 md:mt-0">
                     <span class="inline-flex rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-black">
-                        Login
+                        Giriş
                     </span>
                     <h2 class="mt-4 text-3xl font-semibold text-black">Giriş Yap</h2>
                 </div>
@@ -55,7 +57,7 @@
 
                     <div>
                         <div class="mb-2 flex items-center justify-between gap-3">
-                            <label for="password" class="block text-sm font-medium text-black">Sifre</label>
+                            <label for="password" class="block text-sm font-medium text-black">Şifre</label>
                         </div>
                         <input
                             type="password"
