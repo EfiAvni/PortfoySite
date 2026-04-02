@@ -285,11 +285,18 @@
                                     </div>
                                 </div>
 
-                                <form class="rounded-[2rem] border border-white/60 bg-white/45 p-5 shadow-soft backdrop-blur-2xl sm:p-6">
+                                <form action="/" method="POST" class="rounded-[2rem] border border-white/60 bg-white/45 p-5 shadow-soft backdrop-blur-2xl sm:p-6">
+                                    @if(session('mesaj'))
+                                        <div class="mb-5 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700 shadow-sm">
+                                            {{ session('mesaj') }}
+                                        </div>
+                                    @endif
+
                                     <div class="grid gap-4 sm:grid-cols-2">
                                         <div>
                                             <label for="name" class="mb-2 block text-sm font-medium text-black">Ad Soyad</label>
                                             <input
+                                                name="name"
                                                 id="name"
                                                 type="text"
                                                 placeholder="Adınızı yazın"
@@ -299,6 +306,7 @@
                                         <div>
                                             <label for="email" class="mb-2 block text-sm font-medium text-black">E-posta</label>
                                             <input
+                                                name="email"
                                                 id="email"
                                                 type="email"
                                                 placeholder="mail@ornek.com"
@@ -308,6 +316,7 @@
                                         <div class="sm:col-span-2">
                                             <label for="subject" class="mb-2 block text-sm font-medium text-black">Konu</label>
                                             <input
+                                                name="subject"
                                                 id="subject"
                                                 type="text"
                                                 placeholder="Projeniz hakkında kısa bir başlık"
@@ -317,6 +326,7 @@
                                         <div class="sm:col-span-2">
                                             <label for="message" class="mb-2 block text-sm font-medium text-black">Mesajınız</label>
                                             <textarea
+                                                name="message"
                                                 id="message"
                                                 rows="5"
                                                 placeholder="İhtiyacınızı ve hedefinizi kısaca anlatın"
@@ -325,10 +335,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                                        <p class="text-sm leading-6 text-black">
-                                            Form görsel amaçlıdır. İstersen sonraki adımda arka uç bağlantısını da ekleyebiliriz.
-                                        </p>
+                                    <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"> 
                                         <button
                                             type="submit"
                                             class="rounded-full border border-black bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-slate-100"

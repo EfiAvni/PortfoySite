@@ -1,11 +1,16 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProjectController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('anasayfa');
-});
+})->name('anasayfa');
+
+Route::post('/', [ContactController::class, 'contact']);
 
 Route::get('/login', function () {
     return view('login');
@@ -17,15 +22,12 @@ Route::get('/db', function () {
     return view('db');
 });
 
-Route::get('/dashboard', function () {
-    if (!session()->has('user_id')) {
-        return redirect()->route('login');
-    }
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/adduser', function () {
     return view('adduser');
 });
+
+Route::get('/contactMessages', [ContactController::class, 'messages'])->name('contactMessages');
