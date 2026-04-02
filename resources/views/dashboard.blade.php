@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
     <script>
         tailwind.config = {
             theme: {
@@ -73,6 +76,10 @@
                     <p class="mt-3 text-sm leading-7 text-black">
                         Panel ile ilgili herhangi bir problem yaşarsan veya yardıma ihtiyaç duyarsan, bizimle iletişime geçmekten çekinme. Her zaman destek olmaya hazırız!
                     </p>
+                    <br>
+                    <a href="tel:+905366902746" class="fa-brands fa-whatsapp text-green-500 text-2xl rounded-full border border-black bg-white px-6 py-3 text-center text-sm font-medium text-black transition hover:bg-slate-100">
+                        WhatsApp
+                    </a>
                 </div>
             </aside>
 
@@ -102,7 +109,7 @@
                     <div class="rounded-[1.75rem] border border-white/60 bg-white/45 p-5 shadow-soft backdrop-blur-2xl">
                         <p class="text-sm text-black">Toplam Mesaj</p>
                         <p class="mt-3 text-3xl font-semibold text-black">{{ $message_count }}</p>
-                        <p class="mt-2 text-sm text-black">Bekleyen ve okunmuş mesajlar</p>
+                        <p class="mt-2 text-sm text-black">Bu zamana kadar gelen toplam mesajlar</p>
                     </div>
 
                     <div class="rounded-[1.75rem] border border-white/60 bg-white/45 p-5 shadow-soft backdrop-blur-2xl">
@@ -113,9 +120,9 @@
                     
 
                     <div class="rounded-[1.75rem] border border-white/60 bg-white/45 p-5 shadow-soft backdrop-blur-2xl">
-                        <p class="text-sm text-black">Yeni Mesaj</p>
-                        <p class="mt-3 text-3xl font-semibold text-black">yapım aşamasında</p>
-                        <p class="mt-2 text-sm text-black">Cevap bekleyen talepler</p>
+                        <p class="text-sm text-black">Son Mesajlar</p>
+                        <p class="mt-3 text-3xl font-semibold text-black">{{ $last1hourMessagesCount }}</p>
+                        <p class="mt-2 text-sm text-black">Son 1 saatte gelen mesaj sayısı</p>
                     </div>
 
                     <div class="rounded-[1.75rem] border border-white/60 bg-white/45 p-5 shadow-soft backdrop-blur-2xl">
@@ -210,10 +217,10 @@
                     <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                         <div>
                             <p class="text-sm uppercase tracking-[0.3em] text-black">Ön İzleme</p>
-                            <h3 class="mt-3 text-2xl font-semibold text-black">Mesaj ve proje alanları için örnek görünüm</h3>
+                            <h3 class="mt-3 text-2xl font-semibold text-black">Mesaj ve proje önizlemesi</h3>
                         </div>
                         <p class="max-w-2xl text-sm leading-7 text-black">
-                            Buradaki kutular örnek yerleşim amacıyla bırakıldı. İçlerini daha sonra istediğin sayfa içeriği ile doldurabilirsin.
+                            Gelen son 3 mesaj ve yayınlanmış/yayınlanacak projeler.
                         </p>
                     </div>
 
@@ -227,9 +234,9 @@
                                 <span class="rounded-full border border-black bg-white px-4 py-2 text-xs font-medium text-black">Liste</span>
                             </div>
                             <div class="mt-5 space-y-3">
-                                <div class="rounded-2xl border border-white/60 bg-white/70 px-4 py-3 text-sm text-black">Ahmet Yılmaz - Teklif talebi</div>
-                                <div class="rounded-2xl border border-white/60 bg-white/70 px-4 py-3 text-sm text-black">Ayşe Demir - İş birliği mesajı</div>
-                                <div class="rounded-2xl border border-white/60 bg-white/70 px-4 py-3 text-sm text-black">Mehmet Kaya - Proje sorusu</div>
+                                @foreach ($messages as $message)
+                                    <div class="rounded-2xl border border-white/60 bg-white/70 px-4 py-3 text-sm text-black">{{ $message['name'] }} - {{ $message['subject'] }}</div>
+                                @endforeach
                             </div>
                         </div>
 
