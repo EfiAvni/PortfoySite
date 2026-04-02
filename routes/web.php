@@ -31,3 +31,7 @@ Route::get('/adduser', function () {
 });
 
 Route::get('/contactMessages', [ContactController::class, 'messages'])->name('contactMessages');
+
+Route::get('/projects', function () {
+    return view('projects');
+});

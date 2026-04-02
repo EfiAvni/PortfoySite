@@ -34,7 +34,7 @@
         <div class="absolute bottom-12 left-1/3 -z-10 h-52 w-52 rounded-full bg-sky-100/50 blur-3xl"></div>
 
         <div class="mx-auto flex min-h-screen max-w-7xl flex-col gap-6 px-4 py-6 sm:px-6 lg:flex-row lg:px-8">
-            <aside class="w-full rounded-[2rem] border border-white/55 bg-white/35 p-5 shadow-glass backdrop-blur-2xl lg:sticky lg:top-6 lg:h-[calc(100vh-3rem)] lg:w-72 lg:p-6">
+            <aside class="w-full rounded-[2rem] border border-white/55 bg-white/35 p-5 shadow-glass backdrop-blur-2xl lg:sticky lg:top-6 lg:h-[calc(100vh-3rem)] lg:w-72 lg:shrink-0 lg:p-6">
                 <div class="flex items-center gap-3">
                     <div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/60 bg-white/60 text-lg font-semibold shadow-soft backdrop-blur-xl">
                         MK
@@ -54,7 +54,7 @@
                         <span>İletişim Mesajları</span>
                         <span>02</span>
                     </a>
-                    <a href="#" class="flex items-center justify-between rounded-2xl border border-white/60 bg-white/45 px-4 py-3 transition hover:bg-white/70">
+                    <a href="projects" class="flex items-center justify-between rounded-2xl border border-white/60 bg-white/45 px-4 py-3 transition hover:bg-white/70">
                         <span>Projeler</span>
                         <span>03</span>
                     </a>
@@ -67,9 +67,20 @@
                         <span>05</span>
                     </a>
                 </nav>
+
+                <div class="mt-8 rounded-[1.75rem] border border-white/60 bg-white/50 p-5">
+                    <p class="text-sm uppercase tracking-[0.24em] text-black">DESTEK</p>
+                    <p class="mt-3 text-sm leading-7 text-black">
+                        Panel ile ilgili herhangi bir problem yaşarsan veya yardıma ihtiyaç duyarsan, bizimle iletişime geçmekten çekinme. Her zaman destek olmaya hazırız!
+                    </p>
+                    <br>
+                    <a href="https://wa.me/905319452746" class="fa-brands fa-whatsapp text-green-500 text-2xl rounded-full border border-black bg-white px-6 py-3 text-center text-sm font-medium text-black transition hover:bg-slate-100">
+                        WhatsApp
+                    </a>
+                </div>
             </aside>
 
-            <main class="w-full rounded-[2rem] border border-white/55 bg-white/35 p-5 shadow-glass backdrop-blur-2xl lg:p-6">
+            <main class="flex-1 rounded-[2rem] border border-white/55 bg-white/35 p-5 shadow-glass backdrop-blur-2xl lg:p-6">
                 <div class="flex items-center gap-3">
                     <div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/60 bg-white/60 text-lg font-semibold shadow-soft backdrop-blur-xl">
                         MK

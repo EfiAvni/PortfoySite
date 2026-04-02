@@ -4,10 +4,6 @@ namespace App\Http\Controllers;
 
 class DashboardController extends Controller
 {
-    public function database(){
-        
-    }
-
     public function dashboard()
     {
     if (!session()->has('user_id')) {

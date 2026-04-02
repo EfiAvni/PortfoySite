@@ -57,7 +57,7 @@
                         <span>İletişim Mesajları</span>
                         <span>02</span>
                     </a>
-                    <a href="#" class="flex items-center justify-between rounded-2xl border border-white/60 bg-white/45 px-4 py-3 transition hover:bg-white/70">
+                    <a href="projects" class="flex items-center justify-between rounded-2xl border border-white/60 bg-white/45 px-4 py-3 transition hover:bg-white/70">
                         <span>Projeler</span>
                         <span>03</span>
                     </a>
@@ -77,7 +77,7 @@
                         Panel ile ilgili herhangi bir problem yaşarsan veya yardıma ihtiyaç duyarsan, bizimle iletişime geçmekten çekinme. Her zaman destek olmaya hazırız!
                     </p>
                     <br>
-                    <a href="tel:+905366902746" class="fa-brands fa-whatsapp text-green-500 text-2xl rounded-full border border-black bg-white px-6 py-3 text-center text-sm font-medium text-black transition hover:bg-slate-100">
+                    <a href="https://wa.me/905319452746" class="fa-brands fa-whatsapp text-green-500 text-2xl rounded-full border border-black bg-white px-6 py-3 text-center text-sm font-medium text-black transition hover:bg-slate-100">
                         WhatsApp
                     </a>
                 </div>
