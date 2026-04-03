@@ -104,17 +104,17 @@
                 <section class="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
                     <div class="rounded-[1.75rem] border border-white/60 bg-white/45 p-5 shadow-soft backdrop-blur-2xl">
                         <p class="text-sm text-black">Toplam Proje</p>
-                        <p class="mt-3 text-3xl font-semibold text-black">3</p>
+                        <p class="mt-3 text-3xl font-semibold text-black">{{ $project_count }}</p>
                     </div>
 
                     <div class="rounded-[1.75rem] border border-white/60 bg-white/45 p-5 shadow-soft backdrop-blur-2xl">
                         <p class="text-sm text-black">Yayındaki Projeler</p>
-                        <p class="mt-3 text-3xl font-semibold text-black">1</p>
+                        <p class="mt-3 text-3xl font-semibold text-black">{{ $onair_count }}</p>
                     </div>
 
                     <div class="rounded-[1.75rem] border border-white/60 bg-white/45 p-5 shadow-soft backdrop-blur-2xl">
                         <p class="text-sm text-black">Taslak Projeler</p>
-                        <p class="mt-3 text-3xl font-semibold text-black">1</p>
+                        <p class="mt-3 text-3xl font-semibold text-black">{{ $draft_count }}</p>
                     </div>
 
                     <div class="rounded-[1.75rem] border border-white/60 bg-white/45 p-5 shadow-soft backdrop-blur-2xl">
@@ -127,21 +127,28 @@
                     <div id="proje-ekle" class="rounded-[2rem] border border-white/55 bg-white/34 p-6 shadow-glass backdrop-blur-3xl sm:p-8">
                         <div class="flex items-center justify-between gap-4">
                             <div>
+                                <a href="#proje-ekle"></a>
                                 <p class="text-sm uppercase tracking-[0.3em] text-black">Proje Ekle</p>
                                 <h3 class="mt-3 text-2xl font-semibold text-black">Yeni proje formu</h3>
                             </div>
                         </div>
 
-                        <form class="mt-6 space-y-4">
+                        <form action="projects" method="POST" class="mt-6 space-y-4">
+                            @if(session('mesaj'))
+                                <div class="mb-5 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700 shadow-sm">
+                                    {{ session('mesaj') }}
+                                </div>
+                            @endif
                             <div>
                                 <label for="project_title" class="mb-2 block text-sm font-medium text-black">Proje Başlığı</label>
-                                <input id="project_title" type="text" placeholder="Proje adını yazın" class="w-full rounded-2xl border border-white/70 bg-white/70 px-4 py-3 text-sm text-black outline-none backdrop-blur-xl placeholder:text-black/50 focus:border-sky-300">
+                                <input name="project_title" id="project_title" type="text" placeholder="Proje adını yazın" class="w-full rounded-2xl border border-white/70 bg-white/70 px-4 py-3 text-sm text-black outline-none backdrop-blur-xl placeholder:text-black/50 focus:border-sky-300" required>
                             </div>
 
                             <div class="grid gap-4 sm:grid-cols-2">
                                 <div>
                                     <label for="project_category" class="mb-2 block text-sm font-medium text-black">Kategori</label>
-                                    <select id="project_category" class="w-full rounded-2xl border border-white/70 bg-white/70 px-4 py-3 text-sm text-black outline-none backdrop-blur-xl focus:border-sky-300">
+                                    <select def name="project_category" id="project_category" class="w-full rounded-2xl border border-white/70 bg-white/70 px-4 py-3 text-sm text-black outline-none backdrop-blur-xl focus:border-sky-300" required>
+                                        <option value="">Seçiniz</option>
                                         <option>Website</option>
                                         <option>Panel</option>
                                         <option>E-Ticaret</option>
@@ -154,7 +161,8 @@
 
                                 <div>
                                     <label for="project_status" class="mb-2 block text-sm font-medium text-black">Durum</label>
-                                    <select id="project_status" class="w-full rounded-2xl border border-white/70 bg-white/70 px-4 py-3 text-sm text-black outline-none backdrop-blur-xl focus:border-sky-300">
+                                    <select name="project_status" id="project_status" class="w-full rounded-2xl border border-white/70 bg-white/70 px-4 py-3 text-sm text-black outline-none backdrop-blur-xl focus:border-sky-300" required>
+                                        <option value="">Seçiniz</option>
                                         <option>Yayında</option>
                                         <option>Taslak</option>
                                         <option>Hazırlanıyor</option>
@@ -165,22 +173,22 @@
                             <div class="grid gap-4 sm:grid-cols-2">
                                 <div>
                                     <label for="project_url" class="mb-2 block text-sm font-medium text-black">Proje Linki</label>
-                                    <input id="project_url" type="text" placeholder="https://ornek.com" class="w-full rounded-2xl border border-white/70 bg-white/70 px-4 py-3 text-sm text-black outline-none backdrop-blur-xl placeholder:text-black/50 focus:border-sky-300">
+                                    <input name="project_url" id="project_url" type="text" placeholder="https://ornek.com" class="w-full rounded-2xl border border-white/70 bg-white/70 px-4 py-3 text-sm text-black outline-none backdrop-blur-xl placeholder:text-black/50 focus:border-sky-300">
                                 </div>
 
                                 <div>
                                     <label for="project_image" class="mb-2 block text-sm font-medium text-black">Görsel Yolu</label>
-                                    <input id="project_image" type="text" placeholder="/images/proje.jpg" class="w-full rounded-2xl border border-white/70 bg-white/70 px-4 py-3 text-sm text-black outline-none backdrop-blur-xl placeholder:text-black/50 focus:border-sky-300">
+                                    <input name="project_image" id="project_image" type="text" placeholder="/images/proje.jpg" class="w-full rounded-2xl border border-white/70 bg-white/70 px-4 py-3 text-sm text-black outline-none backdrop-blur-xl placeholder:text-black/50 focus:border-sky-300">
                                 </div>
                             </div>
 
                             <div>
                                 <label for="project_description" class="mb-2 block text-sm font-medium text-black">Açıklama</label>
-                                <textarea id="project_description" rows="5" placeholder="Proje hakkında kısa bilgi girin" class="w-full resize-none rounded-[1.5rem] border border-white/70 bg-white/70 px-4 py-3 text-sm text-black outline-none backdrop-blur-xl placeholder:text-black/50 focus:border-sky-300"></textarea>
+                                <textarea name="project_description" id="project_description" rows="5" placeholder="Proje hakkında kısa bilgi girin" class="w-full resize-none rounded-[1.5rem] border border-white/70 bg-white/70 px-4 py-3 text-sm text-black outline-none backdrop-blur-xl placeholder:text-black/50 focus:border-sky-300" required></textarea>
                             </div>
 
                             <div class="flex flex-wrap gap-3 pt-2">
-                                <button type="button" class="rounded-full border border-black bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-slate-100">
+                                <button type="submit" class="rounded-full border border-black bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-slate-100">
                                     Projeyi Kaydet
                                 </button>
                                 <button type="reset" class="rounded-full border border-white/60 bg-white/45 px-6 py-3 text-sm font-medium text-black transition hover:bg-white/70">
@@ -200,7 +208,7 @@
                                 <span class="mt-1 inline-flex h-3 w-3 rounded-full bg-emerald-400"></span>
                             </div>
 
-                            <div class="mt-6 rounded-[1.75rem] border border-white/60 bg-gradient-to-br from-white/70 to-white/25 p-5">
+                            <div class="mt-6 rounded-[1.75rem] border border-black/60 bg-gradient-to-br from-white/70 to-white/25 p-5">
                                 <p class="text-sm text-black">Örnek Proje</p>
                                 <h4 class="mt-3 text-xl font-semibold text-black">Kurumsal Web Sitesi</h4>
                                 <p class="mt-3 text-sm leading-7 text-black">
@@ -213,23 +221,7 @@
                             </div>
                         </div>
 
-                        <div class="rounded-[2rem] border border-white/55 bg-white/55 p-6 text-black shadow-glass">
-                            <p class="text-sm uppercase tracking-[0.3em] text-black">Hızlı İşlemler</p>
-                            <div class="mt-6 space-y-4">
-                                <div class="flex items-center justify-between rounded-[1.5rem] border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-xl">
-                                    <span>Projeyi Görüntüle</span>
-                                    <span class="text-black">Detay</span>
-                                </div>
-                                <div class="flex items-center justify-between rounded-[1.5rem] border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-xl">
-                                    <span>Projeyi Düzenle</span>
-                                    <span class="text-black">Düzenle</span>
-                                </div>
-                                <div class="flex items-center justify-between rounded-[1.5rem] border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-xl">
-                                    <span>Projeyi Sil</span>
-                                    <span class="text-black">Sil</span>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </section>
 
@@ -257,26 +249,27 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="border-t border-white/60">
+                                    @foreach($projects as $project)
+                                        <tr class="border-t border-white/60">
                                         <td class="px-5 py-4 align-top">
-                                            <p class="font-semibold text-black">Kurumsal Web Sitesi</p>
+                                            <p class="font-semibold text-black">{{ $project["title"] }}</p>
                                             <p class="mt-1 max-w-md text-xs leading-6 text-black/70">
-                                                Şirket tanıtımı, hizmet sayfaları ve iletişim alanı bulunan kurumsal proje.
+                                                {{ $project["description"] }}
                                             </p>
                                         </td>
-                                        <td class="px-5 py-4">Kurumsal</td>
+                                        <td class="px-5 py-4">{{ $project["category"] }}</td>
                                         <td class="px-5 py-4">
                                             <span class="rounded-full border border-black bg-white px-3 py-2 text-xs font-medium text-black">
-                                                Yayında
+                                                {{ $project["status"] }}
                                             </span>
                                         </td>
-                                        <td class="px-5 py-4">02 Nisan 2026</td>
+                                        <td class="px-5 py-4">{{ date("d.m.Y", strtotime($project["created_at"]))}}</td>
                                         <td class="px-5 py-4">
                                             <div class="flex flex-wrap gap-2">
-                                                <a href="#" class="rounded-full border border-white/60 bg-white/70 px-4 py-2 text-xs font-medium text-black transition hover:bg-white">
+                                                <a href="#" class="rounded-full border border-black/60 bg-white/70 px-4 py-2 text-xs font-medium text-black transition hover:bg-white">
                                                     Görüntüle
                                                 </a>
-                                                <a href="#" class="rounded-full border border-white/60 bg-white/70 px-4 py-2 text-xs font-medium text-black transition hover:bg-white">
+                                                <a href="#" class="rounded-full border border-black/60 bg-white/70 px-4 py-2 text-xs font-medium text-black transition hover:bg-white">
                                                     Düzenle
                                                 </a>
                                                 <a href="#" class="rounded-full border border-red-200 bg-red-50 px-4 py-2 text-xs font-medium text-red-700 transition hover:bg-red-100">
@@ -284,63 +277,8 @@
                                                 </a>
                                             </div>
                                         </td>
-                                    </tr>
-                                    <tr class="border-t border-white/60">
-                                        <td class="px-5 py-4 align-top">
-                                            <p class="font-semibold text-black">Yönetim Paneli</p>
-                                            <p class="mt-1 max-w-md text-xs leading-6 text-black/70">
-                                                Kullanıcı, rol ve içerik yönetimi için hazırlanan panel arayüzü.
-                                            </p>
-                                        </td>
-                                        <td class="px-5 py-4">Panel</td>
-                                        <td class="px-5 py-4">
-                                            <span class="rounded-full border border-black bg-white px-3 py-2 text-xs font-medium text-black">
-                                                Taslak
-                                            </span>
-                                        </td>
-                                        <td class="px-5 py-4">29 Mart 2026</td>
-                                        <td class="px-5 py-4">
-                                            <div class="flex flex-wrap gap-2">
-                                                <a href="#" class="rounded-full border border-white/60 bg-white/70 px-4 py-2 text-xs font-medium text-black transition hover:bg-white">
-                                                    Görüntüle
-                                                </a>
-                                                <a href="#" class="rounded-full border border-white/60 bg-white/70 px-4 py-2 text-xs font-medium text-black transition hover:bg-white">
-                                                    Düzenle
-                                                </a>
-                                                <a href="#" class="rounded-full border border-red-200 bg-red-50 px-4 py-2 text-xs font-medium text-red-700 transition hover:bg-red-100">
-                                                    Sil
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-t border-white/60">
-                                        <td class="px-5 py-4 align-top">
-                                            <p class="font-semibold text-black">E-Ticaret Arayüzü</p>
-                                            <p class="mt-1 max-w-md text-xs leading-6 text-black/70">
-                                                Ürün listeleme, detay ve ödeme akışı için tasarlanan vitrin yapısı.
-                                            </p>
-                                        </td>
-                                        <td class="px-5 py-4">E-Ticaret</td>
-                                        <td class="px-5 py-4">
-                                            <span class="rounded-full border border-black bg-white px-3 py-2 text-xs font-medium text-black">
-                                                Hazırlanıyor
-                                            </span>
-                                        </td>
-                                        <td class="px-5 py-4">24 Mart 2026</td>
-                                        <td class="px-5 py-4">
-                                            <div class="flex flex-wrap gap-2">
-                                                <a href="#" class="rounded-full border border-white/60 bg-white/70 px-4 py-2 text-xs font-medium text-black transition hover:bg-white">
-                                                    Görüntüle
-                                                </a>
-                                                <a href="#" class="rounded-full border border-white/60 bg-white/70 px-4 py-2 text-xs font-medium text-black transition hover:bg-white">
-                                                    Düzenle
-                                                </a>
-                                                <a href="#" class="rounded-full border border-red-200 bg-red-50 px-4 py-2 text-xs font-medium text-red-700 transition hover:bg-red-100">
-                                                    Sil
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

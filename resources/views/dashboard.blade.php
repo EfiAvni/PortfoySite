@@ -95,7 +95,7 @@
                         </div>
 
                         <div class="flex flex-wrap gap-3">
-                            <a href="#" class="rounded-full border border-black bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-slate-100">
+                            <a href="/projects#proje-ekle" class="rounded-full border border-black bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-slate-100">
                                 Yeni Proje Ekle
                             </a>
                             <a href="/contactMessages" class="rounded-full border border-white/60 bg-white/45 px-5 py-3 text-sm font-medium text-black transition hover:bg-white/70">

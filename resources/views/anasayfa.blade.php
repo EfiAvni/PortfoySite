@@ -189,43 +189,67 @@
                     <section id="projeler" class="mt-6 rounded-[2.5rem] border border-white/55 bg-white/34 p-6 shadow-glass backdrop-blur-3xl sm:p-8">
                         <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                             <div>
-                                <p class="text-sm uppercase tracking-[0.3em] text-black">Seçili İşler</p>
-                                <h3 class="mt-4 text-3xl font-semibold text-black sm:text-4xl">Üretime alınmış, ölçeklenebilir projeler</h3>
+                                <p class="text-sm uppercase tracking-[0.3em] text-black">Projeler</p>
+                                <h3 class="mt-4 text-3xl font-semibold text-black sm:text-4xl">Paneldeki proje alanı ile uyumlu örnek kartlar</h3>
                             </div>
                             <p class="max-w-2xl text-sm leading-7 text-black">
-                                Her kartta kaliteli yüzeyler, yumuşak ışık geçişleri ve cam derinliği hissi hedeflendi.
+                                Aşağıdaki kartlar; proje başlığı, kategori, durum, link, görsel ve açıklama yapısına göre düzenlendi.
                             </p>
                         </div>
 
                         <div class="mt-8 grid gap-5 xl:grid-cols-3">
                             <article class="group rounded-[2rem] border border-white/60 bg-white/55 p-5 transition hover:-translate-y-1 hover:bg-white/70">
-                                <div class="rounded-[1.75rem] border border-white/60 bg-white/70 p-6 text-black">
-                                    <p class="text-sm uppercase tracking-[0.3em] text-black">SaaS Paneli</p>
-                                    <h4 class="mt-10 text-2xl font-semibold">Finans ve operasyon kontrol paneli</h4>
+                                <div class="rounded-[1.75rem] border border-white/60 bg-gradient-to-br from-white/80 to-white/45 p-6 text-black">
+                                    <p class="text-sm text-black/70">Görsel Alanı</p>
+                                    <h4 class="mt-10 text-2xl font-semibold">Kurumsal Web Sitesi</h4>
+                                    <p class="mt-2 text-xs text-black/70">/images/kurumsal-web.jpg</p>
+                                </div>
+                                <div class="mt-5 flex flex-wrap gap-2 text-sm text-black">
+                                    <span class="rounded-full border border-white/60 bg-white/55 px-3 py-2">Website</span>
+                                    <span class="rounded-full border border-white/60 bg-white/55 px-3 py-2">Yayında</span>
                                 </div>
                                 <p class="mt-5 text-sm leading-7 text-black">
-                                    Raporlama, yetkilendirme ve veri yoğun ekranlar için net hiyerarşiye sahip yönetim paneli deneyimi.
+                                    Şirket tanıtımı, hizmet sayfaları ve iletişim alanı bulunan kurumsal proje yapısı.
                                 </p>
+                                <a href="#" class="mt-5 inline-flex rounded-full border border-black bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-slate-100">
+                                    Proje Linki
+                                </a>
                             </article>
 
                             <article class="group rounded-[2rem] border border-white/60 bg-white/55 p-5 transition hover:-translate-y-1 hover:bg-white/70">
-                                <div class="rounded-[1.75rem] border border-white/60 bg-white/70 p-6 text-black">
-                                    <p class="text-sm uppercase tracking-[0.3em] text-black">E-Ticaret</p>
-                                    <h4 class="mt-10 text-2xl font-semibold">Kaliteli ürün vitrini ve ödeme akışları</h4>
+                                <div class="rounded-[1.75rem] border border-white/60 bg-gradient-to-br from-white/80 to-white/45 p-6 text-black">
+                                    <p class="text-sm text-black/70">Görsel Alanı</p>
+                                    <h4 class="mt-10 text-2xl font-semibold">Yönetim Paneli</h4>
+                                    <p class="mt-2 text-xs text-black/70">/images/yonetim-paneli.jpg</p>
+                                </div>
+                                <div class="mt-5 flex flex-wrap gap-2 text-sm text-black">
+                                    <span class="rounded-full border border-white/60 bg-white/55 px-3 py-2">Panel</span>
+                                    <span class="rounded-full border border-white/60 bg-white/55 px-3 py-2">Taslak</span>
                                 </div>
                                 <p class="mt-5 text-sm leading-7 text-black">
-                                    Dönüşüm odaklı sayfa yapısı, modern ürün sunumu ve hızlı mobil deneyim için optimize edildi.
+                                    Kullanıcı, rol ve içerik yönetimi için hazırlanan yönetim paneli arayüzü.
                                 </p>
+                                <a href="#" class="mt-5 inline-flex rounded-full border border-black bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-slate-100">
+                                    Proje Linki
+                                </a>
                             </article>
 
                             <article class="group rounded-[2rem] border border-white/60 bg-white/55 p-5 transition hover:-translate-y-1 hover:bg-white/70">
-                                <div class="rounded-[1.75rem] border border-white/60 bg-white/70 p-6 text-black">
-                                    <p class="text-sm uppercase tracking-[0.3em] text-black">Kurumsal Web</p>
-                                    <h4 class="mt-10 text-2xl font-semibold">Kurumsal güveni yükselten açılış sayfası yapısı</h4>
+                                <div class="rounded-[1.75rem] border border-white/60 bg-gradient-to-br from-white/80 to-white/45 p-6 text-black">
+                                    <p class="text-sm text-black/70">Görsel Alanı</p>
+                                    <h4 class="mt-10 text-2xl font-semibold">E-Ticaret Arayüzü</h4>
+                                    <p class="mt-2 text-xs text-black/70">/images/e-ticaret.jpg</p>
+                                </div>
+                                <div class="mt-5 flex flex-wrap gap-2 text-sm text-black">
+                                    <span class="rounded-full border border-white/60 bg-white/55 px-3 py-2">E-Ticaret</span>
+                                    <span class="rounded-full border border-white/60 bg-white/55 px-3 py-2">Hazırlanıyor</span>
                                 </div>
                                 <p class="mt-5 text-sm leading-7 text-black">
-                                    Hız, sadelik ve kaliteli algıyı aynı zeminde birleştiren sunum odaklı arayüzler.
+                                    Ürün listeleme, detay ve ödeme akışı için tasarlanan vitrin yapısı.
                                 </p>
+                                <a href="#" class="mt-5 inline-flex rounded-full border border-black bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-slate-100">
+                                    Proje Linki
+                                </a>
                             </article>
                         </div>
                     </section>

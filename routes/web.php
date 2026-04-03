@@ -34,4 +34,8 @@ Route::get('/contactMessages', [ContactController::class, 'messages'])->name('co
 
 Route::get('/projects', function () {
     return view('projects');
-});
+})->name('projects');
+
+Route::get('projects', [ProjectController::class, 'listProjects'])->name('listProjects');
+
+Route::post('/projects', [ProjectController::class, 'createProject'])->name('createProject');

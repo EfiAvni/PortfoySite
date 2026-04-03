@@ -20,12 +20,17 @@ class ContactController extends Controller
 
         $query = $connection->prepare("INSERT INTO contactMessages (name, email, subject, message) VALUES (?, ?, ?, ?)");
         $query->bind_param("ssss", $name, $email, $subject, $message);
-        $query->execute();
-
-        $connection->close();
-
-        return redirect()->to(route('anasayfa') . '#iletisim')
-                 ->with('mesaj', 'Mesajınız başarıyla gönderildi!');
+        
+        if ($query->execute()) {
+            $connection->close();
+            return redirect()->to(route('anasayfa') . '#iletisim')
+                             ->with('mesaj', 'Mesajınız başarıyla gönderildi!');
+        } else {
+            $connection->close();
+            return redirect()->to(route('anasayfa') . '#iletisim')
+                             ->with('mesaj', 'Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.');
+        }
+        
     }
 
     public function messages()
